@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       patientId: DataTypes.INTEGER, // Sửa từ 'patienId' thành 'patientId'
       doctorId: DataTypes.INTEGER,
       description: DataTypes.TEXT,
+      files: DataTypes.TEXT,
     },
     {
       sequelize,

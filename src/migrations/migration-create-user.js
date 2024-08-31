@@ -23,18 +23,22 @@ module.exports = {
       address: {
         type: Sequelize.STRING,
       },
+      phonenumber: {
+        type: Sequelize.STRING,
+      },
       gender: {
         type: Sequelize.BOOLEAN,
       },
+      image: {
+        type: Sequelize.STRING,
+      },
       roleId: {
-        type: Sequelize.STRING, // Sửa từ 'roleid' thành 'roleId' để đồng nhất cách đặt tên
-      },
-      typeRole: {
         type: Sequelize.STRING,
       },
-      keyRole: {
+      positionId: {
         type: Sequelize.STRING,
       },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
