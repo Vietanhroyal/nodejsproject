@@ -85,7 +85,7 @@ let updateUserData = (data) => {
         user.lastName = data.lastName;
         user.address = data.address;
 
-        // Lưu thông tin đã cập nhật
+        // Lưu thông tin đã cập nh ật
         await user.save();
         resolve("User updated successfully");
       } else {
@@ -99,9 +99,26 @@ let updateUserData = (data) => {
   });
 };
 
+let deleteUserById = (userId) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let user = await db.User.findOne({
+        where: { id: userId },
+      });
+      if (user) {
+        await user.destroy();
+      }
+      resolve();
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   createNewUser: createNewUser,
   getAllUser: getAllUser,
   getUserInfobyId: getUserInfobyId,
   updateUserData: updateUserData,
+  deleteUserById: deleteUserById,
 };
